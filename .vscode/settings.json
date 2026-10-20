@@ -1,0 +1,10 @@
+{
+    "terminal.integrated.defaultProfile.linux": "nixDevShell",
+    "terminal.integrated.profiles.linux": {
+        "nixDevShell": {
+            "path": "nix",
+            "args": [ "develop" ],
+            "icon": "terminal-bash"
+        }
+    }
+}

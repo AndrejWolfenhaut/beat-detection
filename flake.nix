@@ -20,13 +20,12 @@
         default = pkgs.mkShell.override {
           stdenv = pkgs.gccStdenv;
         } {
-          buildInputs = with pkgs; [
-            aubio
-          ];
+          buildInputs = with pkgs; [ pipewire aubio ];
 
           packages = with pkgs; [
             cppcheck
             self.formatter.${system}
+            pkg-config
           ]
           ++
           lib.optionals (!stdenv.hostPlatform.isDarwin) [ gdb ];
