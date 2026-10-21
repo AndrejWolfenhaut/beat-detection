@@ -28,7 +28,7 @@ INC_FLAGS := $(addprefix -I,$(INC_DIRS))
 CPPFLAGS := $(INC_FLAGS) -MMD -MP
 
 CFLAGS := $(CFLAGS) $(shell pkg-config --cflags libpipewire-0.3)
-LDFLAGS := -lpipewire-0.3 -laubio
+LDFLAGS := -lm -lpipewire-0.3 -laubio
 
 # The final build step.
 $(BUILD_DIR)/$(TARGET_EXEC): $(OBJS)
