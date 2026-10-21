@@ -27,7 +27,7 @@ INC_FLAGS := $(addprefix -I,$(INC_DIRS))
 # These files will have .d instead of .o as the output.
 CPPFLAGS := $(INC_FLAGS) -MMD -MP
 
-CFLAGS := $(CFLAGS) $(shell pkg-config --cflags libpipewire-0.3)
+CFLAGS := $(CFLAGS) -Wall -Wextra $(shell pkg-config --cflags libpipewire-0.3)
 LDFLAGS := -lm -lpipewire-0.3 -laubio
 
 # The final build step.

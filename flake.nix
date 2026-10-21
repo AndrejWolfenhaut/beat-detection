@@ -33,6 +33,12 @@
       }
     );
 
+    packages = forEachSupportedSystem (
+      { pkgs, system }: {
+        default = pkgs.callPackage ./package.nix {};
+      }
+    );
+
     formatter = forEachSupportedSystem ({ pkgs, ... }: pkgs.nixfmt);
   };
 }
